@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.LinksMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Links">
+        <id column="link_id" property="link_id" />
+        <result column="link_url" property="link_url" />
+        <result column="link_name" property="link_name" />
+        <result column="link_image" property="link_image" />
+        <result column="link_target" property="link_target" />
+        <result column="link_description" property="link_description" />
+        <result column="link_visible" property="link_visible" />
+        <result column="link_owner" property="link_owner" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        link_id, link_url, link_name, link_image, link_target, link_description, link_visible, link_owner
+    </sql>
+
+</mapper>

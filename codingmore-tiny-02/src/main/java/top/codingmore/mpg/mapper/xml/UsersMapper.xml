@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.UsersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Users">
+        <id column="users_id" property="users_id" />
+        <result column="user_login" property="user_login" />
+        <result column="user_pass" property="user_pass" />
+        <result column="user_nicename" property="user_nicename" />
+        <result column="user_email" property="user_email" />
+        <result column="user_url" property="user_url" />
+        <result column="user_registered" property="user_registered" />
+        <result column="user_activation_key" property="user_activation_key" />
+        <result column="user_status" property="user_status" />
+        <result column="display_name" property="display_name" />
+        <result column="user_type" property="user_type" />
+        <result column="open_id" property="open_id" />
+        <result column="attribute" property="attribute" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        users_id, user_login, user_pass, user_nicename, user_email, user_url, user_registered, user_activation_key, user_status, display_name, user_type, open_id, attribute
+    </sql>
+
+</mapper>
