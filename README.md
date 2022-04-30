@@ -1,8 +1,8 @@
 # codingmore-learning
 
-codingmore（编程喵喵🐱）实战项目专属学习路线，主流技术一网打尽！
+codingmore（编程喵🐱）实战项目专属学习路线，主流技术一网打尽！
 
-最近经常有小伙伴问我，codingmore（编程喵喵）项目该如何学习，按照什么样的顺序学习？我都会把这份《编程喵喵学习教程》的目录发给他。
+最近经常有小伙伴问我，codingmore（编程喵）项目该如何学习，按照什么样的顺序学习？我都会把这份《编程喵学习教程》的目录发给他。
 
 在我看来，只有通过真刀真枪的项目实战才能真正掌握一门技术。所以我就和两位合同人共同孕育了这个编程喵喵实战项目，学习它不仅能让大家掌握技术，更能获得宝贵的项目经验。
 
@@ -38,7 +38,7 @@ codingmore（编程喵喵🐱）实战项目专属学习路线，主流技术一
 
 项目框架搭建方面的技术可以参考这些文章：
 
-- [一分钟快速搭建Spring Boot项目](https://mp.weixin.qq.com/s/13La2GC5q4ZclEVqf6Mr9w)
+- [一分钟快速搭建Spring Boot项目](https://tobebetterjavaer.com/springboot/initializr.html)
 - [Spring Boot整合MyBatis-Plus，并通过AutoGenerator生成骨架代码](https://mp.weixin.qq.com/s/9Ls12B9qT1Gx_yBQBPZfiw)
 - [Spring Boot整合Swagger，并使用Knife4j进行美化](https://mp.weixin.qq.com/s/gWPCg6TP3G_-I-eqA6EJmA)
 - [Lombok（代码功能增强库）使用教程](https://mp.weixin.qq.com/s/gGLNKzowq2LWNsMGsIyTkg)
