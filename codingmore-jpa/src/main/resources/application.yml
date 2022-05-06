@@ -3,3 +3,5 @@ spring:
     username: codingmore-mysql
     password: YyfR4TDxCwrjZ2Fs
     url: jdbc:mysql://118.190.99.232:3306/codingmore-mysql?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+  jpa:
+    show-sql: true
