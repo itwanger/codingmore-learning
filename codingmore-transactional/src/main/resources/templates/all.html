@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>用户名</td>
+            <td>密码</td>
+            <td>年纪</td>
+        </tr>
+        <tr th:each="user:${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.age}"></td>
+        </tr>
+    </table>
+</body>
+</html>

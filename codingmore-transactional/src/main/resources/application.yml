@@ -1,0 +1,23 @@
+logging:
+  level:
+    org:
+      hibernate: debug
+      springframework:
+        web: debug
+spring:
+  datasource:
+    username: codingmore-mysql
+    password: YyfR4TDxCwrjZ2Fs
+    url: jdbc:mysql://118.190.99.232:3306/codingmore-mysql?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+  jpa:
+    show-sql: true
+  thymeleaf:
+    cache: false # ?????????????????
+  # 热部署生效
+  devtools:
+    restart:
+      enabled: true
+  # 设置需要重启的目录
+      additional-paths: src/java/main
+  # 设置不需要重启的目录
+      exclude: static/**,public/**,WEB-INF/**
