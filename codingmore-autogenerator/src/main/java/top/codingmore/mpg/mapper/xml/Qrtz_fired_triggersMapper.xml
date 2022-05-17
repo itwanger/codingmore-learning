@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.Qrtz_fired_triggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Qrtz_fired_triggers">
+        <id column="SCHED_NAME" property="SCHED_NAME" />
+        <result column="ENTRY_ID" property="ENTRY_ID" />
+        <result column="TRIGGER_NAME" property="TRIGGER_NAME" />
+        <result column="TRIGGER_GROUP" property="TRIGGER_GROUP" />
+        <result column="INSTANCE_NAME" property="INSTANCE_NAME" />
+        <result column="FIRED_TIME" property="FIRED_TIME" />
+        <result column="SCHED_TIME" property="SCHED_TIME" />
+        <result column="PRIORITY" property="PRIORITY" />
+        <result column="STATE" property="STATE" />
+        <result column="JOB_NAME" property="JOB_NAME" />
+        <result column="JOB_GROUP" property="JOB_GROUP" />
+        <result column="IS_NONCONCURRENT" property="IS_NONCONCURRENT" />
+        <result column="REQUESTS_RECOVERY" property="REQUESTS_RECOVERY" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        SCHED_NAME, ENTRY_ID, TRIGGER_NAME, TRIGGER_GROUP, INSTANCE_NAME, FIRED_TIME, SCHED_TIME, PRIORITY, STATE, JOB_NAME, JOB_GROUP, IS_NONCONCURRENT, REQUESTS_RECOVERY
+    </sql>
+
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.Qrtz_scheduler_stateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Qrtz_scheduler_state">
+        <id column="SCHED_NAME" property="SCHED_NAME" />
+        <result column="INSTANCE_NAME" property="INSTANCE_NAME" />
+        <result column="LAST_CHECKIN_TIME" property="LAST_CHECKIN_TIME" />
+        <result column="CHECKIN_INTERVAL" property="CHECKIN_INTERVAL" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        SCHED_NAME, INSTANCE_NAME, LAST_CHECKIN_TIME, CHECKIN_INTERVAL
+    </sql>
+
+</mapper>

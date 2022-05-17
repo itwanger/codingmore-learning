@@ -16,6 +16,15 @@
 
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+-- ----------------------------
+--  create database
+-- ----------------------------
+DROP DATABASE IF EXISTS `codingmore`;
+CREATE DATABASE `codingmore`;
+USE `codingmore`;
 
 -- ----------------------------
 --  Table structure for `admin_role_relation`

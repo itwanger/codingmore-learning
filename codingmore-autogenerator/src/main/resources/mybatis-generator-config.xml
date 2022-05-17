@@ -15,7 +15,7 @@
 
         <!-- jdbc连接 -->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/codingmore-autogenerator?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false"
+                        connectionURL="jdbc:mysql://localhost:3306/codingmore?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false"
                         userId="root"
                         password="Huicheng123">
             <!--高版本的 mysql-connector-java 需要设置 nullCatalogMeansCurrent=true-->
@@ -31,18 +31,18 @@
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="com.codingmore.mbg.po" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="top.codingmore.mbg.po" targetProject="src/main/java">
             <!-- 是否针对string类型的字段在set方法中进行修剪，默认false -->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
 
         <!-- 生成Mapper.xml文件 -->
-        <sqlMapGenerator targetPackage="com.codingmore.mbg.mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="top.codingmore.mbg.mapper" targetProject="src/main/resources">
         </sqlMapGenerator>
 
         <!-- 生成 XxxMapper.java 接口-->
-        <javaClientGenerator targetPackage="com.codingmore.mbg.dao" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="top.codingmore.mbg.dao" targetProject="src/main/java" type="XMLMAPPER">
         </javaClientGenerator>
 
 

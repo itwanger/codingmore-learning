@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.Qrtz_simple_triggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Qrtz_simple_triggers">
+        <id column="SCHED_NAME" property="SCHED_NAME" />
+        <result column="TRIGGER_NAME" property="TRIGGER_NAME" />
+        <result column="TRIGGER_GROUP" property="TRIGGER_GROUP" />
+        <result column="REPEAT_COUNT" property="REPEAT_COUNT" />
+        <result column="REPEAT_INTERVAL" property="REPEAT_INTERVAL" />
+        <result column="TIMES_TRIGGERED" property="TIMES_TRIGGERED" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, REPEAT_COUNT, REPEAT_INTERVAL, TIMES_TRIGGERED
+    </sql>
+
+</mapper>

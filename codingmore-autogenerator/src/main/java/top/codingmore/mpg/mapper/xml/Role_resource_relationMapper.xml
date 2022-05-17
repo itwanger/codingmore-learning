@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.Role_resource_relationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Role_resource_relation">
+        <id column="role_resource_relation_id" property="role_resource_relation_id" />
+        <result column="role_id" property="role_id" />
+        <result column="resource_id" property="resource_id" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        role_resource_relation_id, role_id, resource_id
+    </sql>
+
+</mapper>

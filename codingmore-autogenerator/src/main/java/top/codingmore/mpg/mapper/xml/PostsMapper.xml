@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.PostsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Posts">
+        <id column="posts_id" property="posts_id" />
+        <result column="post_author" property="post_author" />
+        <result column="post_date" property="post_date" />
+        <result column="post_content" property="post_content" />
+        <result column="post_title" property="post_title" />
+        <result column="post_excerpt" property="post_excerpt" />
+        <result column="post_status" property="post_status" />
+        <result column="comment_status" property="comment_status" />
+        <result column="post_modified" property="post_modified" />
+        <result column="menu_order" property="menu_order" />
+        <result column="post_type" property="post_type" />
+        <result column="comment_count" property="comment_count" />
+        <result column="attribute" property="attribute" />
+        <result column="html_content" property="html_content" />
+        <result column="page_view" property="page_view" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        posts_id, post_author, post_date, post_content, post_title, post_excerpt, post_status, comment_status, post_modified, menu_order, post_type, comment_count, attribute, html_content, page_view
+    </sql>
+
+</mapper>

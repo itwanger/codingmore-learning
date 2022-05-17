@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.Qrtz_simprop_triggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Qrtz_simprop_triggers">
+        <id column="SCHED_NAME" property="SCHED_NAME" />
+        <result column="TRIGGER_NAME" property="TRIGGER_NAME" />
+        <result column="TRIGGER_GROUP" property="TRIGGER_GROUP" />
+        <result column="STR_PROP_1" property="STR_PROP_1" />
+        <result column="STR_PROP_2" property="STR_PROP_2" />
+        <result column="STR_PROP_3" property="STR_PROP_3" />
+        <result column="INT_PROP_1" property="INT_PROP_1" />
+        <result column="INT_PROP_2" property="INT_PROP_2" />
+        <result column="LONG_PROP_1" property="LONG_PROP_1" />
+        <result column="LONG_PROP_2" property="LONG_PROP_2" />
+        <result column="DEC_PROP_1" property="DEC_PROP_1" />
+        <result column="DEC_PROP_2" property="DEC_PROP_2" />
+        <result column="BOOL_PROP_1" property="BOOL_PROP_1" />
+        <result column="BOOL_PROP_2" property="BOOL_PROP_2" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, STR_PROP_1, STR_PROP_2, STR_PROP_3, INT_PROP_1, INT_PROP_2, LONG_PROP_1, LONG_PROP_2, DEC_PROP_1, DEC_PROP_2, BOOL_PROP_1, BOOL_PROP_2
+    </sql>
+
+</mapper>

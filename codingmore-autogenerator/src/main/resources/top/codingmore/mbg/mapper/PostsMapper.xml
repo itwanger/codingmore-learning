@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mbg.dao.PostsMapper">
+  <resultMap id="BaseResultMap" type="top.codingmore.mbg.po.Posts">
+    <id column="posts_id" jdbcType="BIGINT" property="postsId" />
+    <result column="post_author" jdbcType="BIGINT" property="postAuthor" />
+    <result column="post_date" jdbcType="TIMESTAMP" property="postDate" />
+    <result column="post_status" jdbcType="VARCHAR" property="postStatus" />
+    <result column="comment_status" jdbcType="VARCHAR" property="commentStatus" />
+    <result column="post_modified" jdbcType="TIMESTAMP" property="postModified" />
+    <result column="menu_order" jdbcType="INTEGER" property="menuOrder" />
+    <result column="post_type" jdbcType="VARCHAR" property="postType" />
+    <result column="comment_count" jdbcType="BIGINT" property="commentCount" />
+    <result column="page_view" jdbcType="BIGINT" property="pageView" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="top.codingmore.mbg.po.Posts">
+    <result column="post_content" jdbcType="LONGVARCHAR" property="postContent" />
+    <result column="post_title" jdbcType="LONGVARCHAR" property="postTitle" />
+    <result column="post_excerpt" jdbcType="LONGVARCHAR" property="postExcerpt" />
+    <result column="attribute" jdbcType="LONGVARCHAR" property="attribute" />
+    <result column="html_content" jdbcType="LONGVARCHAR" property="htmlContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    posts_id, post_author, post_date, post_status, comment_status, post_modified, menu_order, 
+    post_type, comment_count, page_view
+  </sql>
+  <sql id="Blob_Column_List">
+    post_content, post_title, post_excerpt, attribute, html_content
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from posts
+    where posts_id = #{postsId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from posts
+    where posts_id = #{postsId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="top.codingmore.mbg.po.Posts">
+    insert into posts (posts_id, post_author, post_date, 
+      post_status, comment_status, post_modified, 
+      menu_order, post_type, comment_count, 
+      page_view, post_content, post_title, 
+      post_excerpt, attribute, html_content
+      )
+    values (#{postsId,jdbcType=BIGINT}, #{postAuthor,jdbcType=BIGINT}, #{postDate,jdbcType=TIMESTAMP}, 
+      #{postStatus,jdbcType=VARCHAR}, #{commentStatus,jdbcType=VARCHAR}, #{postModified,jdbcType=TIMESTAMP}, 
+      #{menuOrder,jdbcType=INTEGER}, #{postType,jdbcType=VARCHAR}, #{commentCount,jdbcType=BIGINT}, 
+      #{pageView,jdbcType=BIGINT}, #{postContent,jdbcType=LONGVARCHAR}, #{postTitle,jdbcType=LONGVARCHAR}, 
+      #{postExcerpt,jdbcType=LONGVARCHAR}, #{attribute,jdbcType=LONGVARCHAR}, #{htmlContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="top.codingmore.mbg.po.Posts">
+    insert into posts
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="postsId != null">
+        posts_id,
+      </if>
+      <if test="postAuthor != null">
+        post_author,
+      </if>
+      <if test="postDate != null">
+        post_date,
+      </if>
+      <if test="postStatus != null">
+        post_status,
+      </if>
+      <if test="commentStatus != null">
+        comment_status,
+      </if>
+      <if test="postModified != null">
+        post_modified,
+      </if>
+      <if test="menuOrder != null">
+        menu_order,
+      </if>
+      <if test="postType != null">
+        post_type,
+      </if>
+      <if test="commentCount != null">
+        comment_count,
+      </if>
+      <if test="pageView != null">
+        page_view,
+      </if>
+      <if test="postContent != null">
+        post_content,
+      </if>
+      <if test="postTitle != null">
+        post_title,
+      </if>
+      <if test="postExcerpt != null">
+        post_excerpt,
+      </if>
+      <if test="attribute != null">
+        attribute,
+      </if>
+      <if test="htmlContent != null">
+        html_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="postsId != null">
+        #{postsId,jdbcType=BIGINT},
+      </if>
+      <if test="postAuthor != null">
+        #{postAuthor,jdbcType=BIGINT},
+      </if>
+      <if test="postDate != null">
+        #{postDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="postStatus != null">
+        #{postStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="commentStatus != null">
+        #{commentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="postModified != null">
+        #{postModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="menuOrder != null">
+        #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="postType != null">
+        #{postType,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCount != null">
+        #{commentCount,jdbcType=BIGINT},
+      </if>
+      <if test="pageView != null">
+        #{pageView,jdbcType=BIGINT},
+      </if>
+      <if test="postContent != null">
+        #{postContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="postTitle != null">
+        #{postTitle,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="postExcerpt != null">
+        #{postExcerpt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="attribute != null">
+        #{attribute,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="htmlContent != null">
+        #{htmlContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="top.codingmore.mbg.po.Posts">
+    update posts
+    <set>
+      <if test="postAuthor != null">
+        post_author = #{postAuthor,jdbcType=BIGINT},
+      </if>
+      <if test="postDate != null">
+        post_date = #{postDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="postStatus != null">
+        post_status = #{postStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="commentStatus != null">
+        comment_status = #{commentStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="postModified != null">
+        post_modified = #{postModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="menuOrder != null">
+        menu_order = #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="postType != null">
+        post_type = #{postType,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCount != null">
+        comment_count = #{commentCount,jdbcType=BIGINT},
+      </if>
+      <if test="pageView != null">
+        page_view = #{pageView,jdbcType=BIGINT},
+      </if>
+      <if test="postContent != null">
+        post_content = #{postContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="postTitle != null">
+        post_title = #{postTitle,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="postExcerpt != null">
+        post_excerpt = #{postExcerpt,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="attribute != null">
+        attribute = #{attribute,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="htmlContent != null">
+        html_content = #{htmlContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where posts_id = #{postsId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="top.codingmore.mbg.po.Posts">
+    update posts
+    set post_author = #{postAuthor,jdbcType=BIGINT},
+      post_date = #{postDate,jdbcType=TIMESTAMP},
+      post_status = #{postStatus,jdbcType=VARCHAR},
+      comment_status = #{commentStatus,jdbcType=VARCHAR},
+      post_modified = #{postModified,jdbcType=TIMESTAMP},
+      menu_order = #{menuOrder,jdbcType=INTEGER},
+      post_type = #{postType,jdbcType=VARCHAR},
+      comment_count = #{commentCount,jdbcType=BIGINT},
+      page_view = #{pageView,jdbcType=BIGINT},
+      post_content = #{postContent,jdbcType=LONGVARCHAR},
+      post_title = #{postTitle,jdbcType=LONGVARCHAR},
+      post_excerpt = #{postExcerpt,jdbcType=LONGVARCHAR},
+      attribute = #{attribute,jdbcType=LONGVARCHAR},
+      html_content = #{htmlContent,jdbcType=LONGVARCHAR}
+    where posts_id = #{postsId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.codingmore.mbg.po.Posts">
+    update posts
+    set post_author = #{postAuthor,jdbcType=BIGINT},
+      post_date = #{postDate,jdbcType=TIMESTAMP},
+      post_status = #{postStatus,jdbcType=VARCHAR},
+      comment_status = #{commentStatus,jdbcType=VARCHAR},
+      post_modified = #{postModified,jdbcType=TIMESTAMP},
+      menu_order = #{menuOrder,jdbcType=INTEGER},
+      post_type = #{postType,jdbcType=VARCHAR},
+      comment_count = #{commentCount,jdbcType=BIGINT},
+      page_view = #{pageView,jdbcType=BIGINT}
+    where posts_id = #{postsId,jdbcType=BIGINT}
+  </update>
+</mapper>

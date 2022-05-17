@@ -1,1 +1,6 @@
-
+spring:
+  datasource:
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    username: root
+    password: Huicheng123
+    url: jdbc:mysql://localhost:3306/codingmore?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false

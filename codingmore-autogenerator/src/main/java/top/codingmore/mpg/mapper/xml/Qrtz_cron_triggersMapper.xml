@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.Qrtz_cron_triggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Qrtz_cron_triggers">
+        <id column="SCHED_NAME" property="SCHED_NAME" />
+        <result column="TRIGGER_NAME" property="TRIGGER_NAME" />
+        <result column="TRIGGER_GROUP" property="TRIGGER_GROUP" />
+        <result column="CRON_EXPRESSION" property="CRON_EXPRESSION" />
+        <result column="TIME_ZONE_ID" property="TIME_ZONE_ID" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, CRON_EXPRESSION, TIME_ZONE_ID
+    </sql>
+
+</mapper>

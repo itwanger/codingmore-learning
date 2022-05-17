@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mpg.mapper.Qrtz_triggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.codingmore.mpg.entity.Qrtz_triggers">
+        <id column="SCHED_NAME" property="SCHED_NAME" />
+        <result column="TRIGGER_NAME" property="TRIGGER_NAME" />
+        <result column="TRIGGER_GROUP" property="TRIGGER_GROUP" />
+        <result column="JOB_NAME" property="JOB_NAME" />
+        <result column="JOB_GROUP" property="JOB_GROUP" />
+        <result column="DESCRIPTION" property="DESCRIPTION" />
+        <result column="NEXT_FIRE_TIME" property="NEXT_FIRE_TIME" />
+        <result column="PREV_FIRE_TIME" property="PREV_FIRE_TIME" />
+        <result column="PRIORITY" property="PRIORITY" />
+        <result column="TRIGGER_STATE" property="TRIGGER_STATE" />
+        <result column="TRIGGER_TYPE" property="TRIGGER_TYPE" />
+        <result column="START_TIME" property="START_TIME" />
+        <result column="END_TIME" property="END_TIME" />
+        <result column="CALENDAR_NAME" property="CALENDAR_NAME" />
+        <result column="MISFIRE_INSTR" property="MISFIRE_INSTR" />
+        <result column="JOB_DATA" property="JOB_DATA" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        SCHED_NAME, TRIGGER_NAME, TRIGGER_GROUP, JOB_NAME, JOB_GROUP, DESCRIPTION, NEXT_FIRE_TIME, PREV_FIRE_TIME, PRIORITY, TRIGGER_STATE, TRIGGER_TYPE, START_TIME, END_TIME, CALENDAR_NAME, MISFIRE_INSTR, JOB_DATA
+    </sql>
+
+</mapper>
