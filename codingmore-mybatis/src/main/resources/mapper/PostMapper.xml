@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.codingmore.mapper.PostMapper">
+    <resultMap id="BaseResultMap" type="top.codingmore.entity.Posts">
+        <id column="posts_id" property="postsId"/>
+        <result column="post_author" property="postAuthor"/>
+        <result column="post_content" property="postContent"/>
+        <result column="post_title" property="postTitle"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        posts_id, post_author, post_content, post_title
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from posts;
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM users
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="top.codingmore.entity.Posts">
+        insert into
+            posts
+            (post_author,post_content,post_title)
+        values
+            (#{postAuthor},#{postContent},#{postTitle});
+    </insert>
+    <update id="update" parameterType="top.codingmore.entity.Posts">
+        update
+            posts
+        set
+        <if test="postAuthor != null">post_author=#{postAuthor},</if>
+        <if test="postContent != null">post_content=#{postContent},</if>
+        post_title=#{postTitle}
+        where id=#{id}
+    </update>
+    <delete id="delete">
+        delete from
+            posts
+        where
+            id=#{id}
+    </delete>
+</mapper>
