@@ -38,7 +38,7 @@ public class CodeGenerator {
         dsc.setUrl("jdbc:mysql://localhost:3306/codingmore?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("Huicheng123");
+        dsc.setPassword("Codingmore123");
 
         mpg.setDataSource(dsc);
 
