@@ -12,9 +12,9 @@ codingmore（编程喵🐱）实战项目专属学习路线，主流技术一网
 
 由于 codingmore 项目融合了绝大多数现阶段流行的技术点，所以如果你是个初学者的话，最好先去看一下《Java 程序员进阶之路》打个基础。
 
->在线网址：[https://tobebetterjavaer.com/](https://tobebetterjavaer.com/)
+>- 在线网址：[https://tobebetterjavaer.com/](https://tobebetterjavaer.com/)
+>- 开源知识库：[https://github.com/itwanger/toBeBetterJavaer](https://github.com/itwanger/toBeBetterJavaer)
 
-![](https://pic2.zhimg.com/80/v2-6806702a6bade3b66b37a9144871e5f5_1440w.jpg?source=1940ef5c)
 
 ### 二、后端技术栈
 
@@ -32,15 +32,15 @@ codingmore（编程喵🐱）实战项目专属学习路线，主流技术一网
 
 来看看 codingmore 项目都选用了哪些主流技术吧！
 
-![](https://cdn.jsdelivr.net/gh/itwanger/toBeBetterJavaer/images/zhishixingqiu/readme-8.png)
+![](http://cdn.tobebetterjavaer.com/codingmore/codingmore-technology.png)
 
 为了减轻大家在导入主流技术时的成本，我花了大量的时间来写下面这些硬核教程，所以遇到了新的技术点，一点也用慌，一步一个脚印跟着动手做就对了！
 
 项目框架搭建方面的技术可以参考这些文章：
 
-- [一分钟快速搭建Spring Boot项目](https://tobebetterjavaer.com/springboot/initializr.html)
-- [Spring Boot整合MyBatis-Plus，并通过AutoGenerator生成骨架代码](https://mp.weixin.qq.com/s/9Ls12B9qT1Gx_yBQBPZfiw)
-- [Spring Boot整合Swagger，并使用Knife4j进行美化](https://mp.weixin.qq.com/s/gWPCg6TP3G_-I-eqA6EJmA)
+- [搭建第一个Spring Boot项目](http://www.codingmore.top/65.html)
+- [Spring Boot整合MyBatis-Plus，并通过AutoGenerator生成骨架代码](http://www.codingmore.top/76.html)
+- [Spring Boot整合Swagger，并使用Knife4j进行美化](http://www.codingmore.top/74.html)
 - [Lombok（代码功能增强库）使用教程](https://mp.weixin.qq.com/s/gGLNKzowq2LWNsMGsIyTkg)
 - [Hutool（简化每一行代码）使用教程](https://mp.weixin.qq.com/s/8VcaWhtiaiO6CWOAZJEGvg)
 
