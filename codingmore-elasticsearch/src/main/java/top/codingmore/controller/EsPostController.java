@@ -19,7 +19,7 @@ import top.codingmore.webapi.ResultObject;
  * 搜索文章管理控制器
  */
 @RestController
-@Api(tags = "搜索文章 ES")
+@Api(tags = "文章 ES")
 @RequestMapping("/esPost")
 public class EsPostController {
     @Autowired
@@ -27,7 +27,7 @@ public class EsPostController {
 
     @ApiOperation(value = "导入所有文章到 ES")
     @RequestMapping(value = "/importAll", method = RequestMethod.POST)
-    public ResultObject importAll(@Validated UserParam userParam, BindingResult result) {
+    public ResultObject importAll() {
         int count = esPostService.importAll();
         return ResultObject.success(count);
     }

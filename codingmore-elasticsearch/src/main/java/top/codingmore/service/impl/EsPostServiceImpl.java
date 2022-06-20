@@ -51,6 +51,6 @@ public class EsPostServiceImpl implements IEsPostService {
     @Override
     public Page<EsPosts> search(String keyword, Integer pageNum, Integer pageSize) {
         Pageable pageable = PageRequest.of(pageNum, pageSize);
-        return esPostRepository.findByTitleOrContentOrExcerpt(keyword,keyword,keyword,pageable);
+        return esPostRepository.findByPostTitle(keyword,pageable);
     }
 }

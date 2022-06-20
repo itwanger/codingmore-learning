@@ -9,10 +9,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -30,14 +26,12 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="Posts对象", description="文章")
 @TableName(autoResultMap = true)
-@Document(indexName = "posts")
-public class EsPosts implements Serializable {
+public class Posts implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "posts_id")
     @TableId(value = "posts_id", type = IdType.AUTO)
-    @Id
     private Long postsId;
 
     @ApiModelProperty(value = "对应作者ID")
@@ -49,7 +43,6 @@ public class EsPosts implements Serializable {
     @ApiModelProperty(value = "正文")
     private String postContent;
 
-    @Field(type = FieldType.Text, analyzer = "ik_max_word")
     @ApiModelProperty(value = "标题")
     private String postTitle;
 

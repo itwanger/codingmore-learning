@@ -10,5 +10,6 @@ import top.codingmore.model.EsPosts;
  */
 public interface EsPostRepository extends ElasticsearchRepository<EsPosts, Long> {
 
-    Page<EsPosts> findByTitleOrContentOrExcerpt(String title, String content, String excerpt, Pageable pageable);
+    Page<EsPosts> findByPostTitle(String postTitle, Pageable pageable);
+    Page<EsPosts> findByPostTitleOrPostContent(String postTitle,String postContent,Pageable pageable);
 }
