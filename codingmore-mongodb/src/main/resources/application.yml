@@ -1,0 +1,16 @@
+spring:
+  mvc:
+    pathmatch:
+      # springfox-swagger2 and springfox-swagger-ui version(3.0.0), spring-boot version(2.6.2)
+      # https://stackoverflow.com/questions/40241843/failed-to-start-bean-documentationpluginsbootstrapper-in-spring-data-rest
+      matching-strategy: ant_path_matcher
+  data:
+    mongodb:
+      host: 127.0.0.1 # 指定 MongoDB Server 地址
+      port: 27017 # 指定 MongoDB Server 端口
+      database: codingmore # 指定使用的数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Codingmore123
+    url: jdbc:mysql://localhost:3306/codingmore-mybatis?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
