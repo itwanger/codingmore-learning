@@ -32,10 +32,10 @@ public class RabbitMQController {
         return ResultObject.success("ok");
     }
 
-//    @PostMapping("/sendBroadcast")
-//    @ApiOperation("广播模式")
-//    public ResultObject sendBroadcast(String exchange, String message) {
-//        rabbitTemplate.convertAndSend(exchange, "",message);
-//        return ResultObject.success("ok");
-//    }
+    @PostMapping("/sendBroadcast")
+    @ApiOperation("广播模式")
+    public ResultObject sendBroadcast(String exchange, String message) {
+        rabbitTemplate.convertAndSend(exchange, "",message);
+        return ResultObject.success("ok");
+    }
 }
