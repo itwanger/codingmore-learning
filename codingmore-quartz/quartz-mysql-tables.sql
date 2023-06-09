@@ -5,6 +5,7 @@
 #
 # By: Ron Cordell - roncordell
 #  I didn't see this anywhere, so I thought I'd post it here. This is the script from Quartz to create the tables in a MySQL database, modified to use INNODB instead of MYISAM.
+# INNDB与MYISAM是MYSQL的两大搜索引擎，两者的数据结构不同，最大的区别是：InnoDB 支持外键、事务，而MYISAM不支持。一般MYISAM用于大量只读查询的时候使用，MYSQL5.5后默认都是InnoDB引擎；
 
 DROP TABLE IF EXISTS QRTZ_FIRED_TRIGGERS;
 DROP TABLE IF EXISTS QRTZ_PAUSED_TRIGGER_GRPS;
