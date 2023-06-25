@@ -1,32 +1,29 @@
 package top.codingmore.service.impl;
 
 import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.lang.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
+import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.codingmore.service.IScheduleService;
 
 import java.util.Date;
+import java.util.UUID;
 
-
-/**
- * 微信搜索「沉默王二」，回复 Java
- *
- * @author 沉默王二
- * @date 5/21/22
- */
 @Slf4j
 @Service
 public class ScheduleServiceImpl implements IScheduleService {
     private String defaultGroup = "default_group";
-
+    /**
+     * 这里idea可能爆红，没关系，不影响执行，scheduler已经在spring中被实例化了；
+     */
     @Autowired
-    private Scheduler scheduler;
+    Scheduler scheduler;
+
     @Override
-    public String scheduleJob(Class<? extends Job> jobBeanClass, String cron, String data) {
-        String jobName = UUID.fastUUID().toString();
+    public String scheduleJob(Class<? extends Job> jobBeanClass, String cron, String data) throws SchedulerException {
+        String jobName = UUID.randomUUID().toString();
         JobDetail jobDetail = JobBuilder.newJob(jobBeanClass)
                 .withIdentity(jobName, defaultGroup)
                 .usingJobData("data", data)
@@ -46,7 +43,7 @@ public class ScheduleServiceImpl implements IScheduleService {
     }
 
     @Override
-    public String scheduleFixTimeJob(Class<? extends Job> jobBeanClass, Date startTime, String data) {
+    public String scheduleFixTimeJob(Class<? extends Job> jobBeanClass, Date startTime, String data) throws SchedulerException {
         //日期转CRON表达式
         String startCron = String.format("%d %d %d %d %d ? %d",
                 DateUtil.second(startTime),
@@ -59,7 +56,8 @@ public class ScheduleServiceImpl implements IScheduleService {
     }
 
     @Override
-    public Boolean cancelScheduleJob(String jobName) {
+    public Boolean cancelScheduleJob(String jobName) throws SchedulerException {
+        Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
         boolean success = false;
         try {
             // 暂停触发器

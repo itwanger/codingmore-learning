@@ -1,0 +1,121 @@
+server:
+  port: 8082
+
+# actuator端口配置，包括检测端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # * 在yaml文件属于关键字，所以需要加引号
+
+#  Druid连接池配置
+spring:
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/codingmore?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      #初始化连接池大小
+      initial-size: 5
+      #配置最小连接数
+      min-idle: 5
+      #配置最大连接数
+      max-active: 200
+      #配置连接等待超时时间
+      max-wait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      #测试连接
+      validation-query: SELECT 1 FROM DUAL
+      #申请连接的时候检测，建议配置为true，不影响性能，并且保证安全
+      test-while-idle: true
+      #获取连接时执行检测，建议关闭，影响性能
+      test-on-borrow: false
+      #归还连接时执行检测，建议关闭，影响性能
+      test-on-return: false
+      #是否开启PSCache，PSCache对支持游标的数据库性能提升巨大，oracle建议开启，mysql下建议关闭
+      pool-prepared-statements: false
+      #开启poolPreparedStatements后生效
+      max-pool-prepared-statement-per-connection-size: 20
+      #配置扩展插件，常用的插件有=>stat:监控统计  log4j:日志  wall:防御sql注入
+      filters: stat,wall,slf4j
+      #打开mergeSql功能；慢SQL记录
+      connection-properties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+      #配置DruidStatFilter
+      web-stat-filter:
+        enabled: true
+        url-pattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+      #配置DruidStatViewServlet
+      stat-view-servlet:
+        enabled: true
+        resetEnable: false
+        url-pattern: "/druid/*"
+        #登录名
+        login-username: root
+        #登录密码
+        login-password: 123456
+
+  #quartz配置
+  quartz:
+    job-store-type: jdbc # 默认为内存 memory 的方式，这里我们使用数据库的形式
+    wait-for-jobs-to-complete-on-shutdown: true # 关闭时等待任务完成
+    overwrite-existing-jobs: true # 可以覆盖已有的任务
+    jdbc:
+      initialize-schema: never # 是否自动使用 SQL 初始化 Quartz 表结构
+    properties: # quartz原生配置
+      org:
+        quartz:
+          scheduler:
+            instanceName: scheduler # 调度器实例名称
+            instanceId: AUTO # 调度器实例ID自动生成
+          # JobStore 相关配置
+          jobStore:
+            class: org.springframework.scheduling.quartz.LocalDataSourceJobStore # 由于用了spring的jdbc所以改用该
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate # 使用完全兼容JDBC的驱动
+            tablePrefix: QRTZ_ # Quartz 表前缀
+            useProperties: false # 是否将JobDataMap中的属性转为字符串存储
+          # 线程池相关配置
+          threadPool:
+            threadCount: 25 # 线程池大小。默认为 10 。
+            threadPriority: 5 # 线程优先级
+            class: org.quartz.simpl.SimpleThreadPool # 指定线程池实现类，对调度器提供固定大小的线程池
+
+#springdoc相关配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: top.codingmore  #改成你自己的包名，一般到启动类的包名
+
+#knife4j相关配置 可以不用改
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
