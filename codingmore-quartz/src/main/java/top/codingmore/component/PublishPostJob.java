@@ -18,22 +18,26 @@ import top.codingmore.service.IScheduleService;
 public class PublishPostJob extends QuartzJobBean {
     @Autowired
     private IScheduleService scheduleService;
-
     @Override
-    protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+    protected void executeInternal(JobExecutionContext jobExecutionContext){
         Trigger trigger = jobExecutionContext.getTrigger();
         JobDetail jobDetail = jobExecutionContext.getJobDetail();
         JobDataMap jobDataMap = jobDetail.getJobDataMap();
+        //获取任务中的数据
         Long data = jobDataMap.getLong("data");
-        log.debug("定时发布文章操作：{}",data);
+        log.info("定时操作，使用参数：{}",data);
 
-        // 获取文章的 ID后获取文章，更新文章为发布的状态，还有发布的时间
+        // 获取文章的 ID后获取文章，更新文章为发布的状态，还有发布的时间。操作成功后进行下面操作；
         boolean success = true;
 
         //完成后删除触发器和任务
         if (success) {
-            log.debug("定时任务执行成功，开始清除定时任务");
-            scheduleService.cancelScheduleJob(trigger.getKey().getName());
+            log.info("定时任务执行成功，开始清除定时任务");
+            try {
+                scheduleService.cancelScheduleJob(trigger.getKey().getName());
+            } catch (SchedulerException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
